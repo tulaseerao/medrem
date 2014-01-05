@@ -50,9 +50,9 @@
           %ul.off-canvas-list
             - if current_user
               %li= link_to "My Dependants", nil
-              %li= link_to "My Medications", medications_path
-              %li= link_to "Doctors", doctors_path
-              %li= link_to "Pharmacies", pharmacies_path
+              %li= link_to "My Medications", medications_path, 'data-no-turbolink' => true
+              %li= link_to "Doctors", doctors_path, 'data-no-turbolink' => true
+              %li= link_to "Pharmacies", pharmacies_path, 'data-no-turbolink' => true
         %aside.right-off-canvas-menu
           %ul.off-canvas-list
             - if current_user
