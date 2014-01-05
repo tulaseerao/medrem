@@ -1,4 +1,8 @@
 Medrem::Application.routes.draw do
+  resources :doctors
+
+  resources :pharmacies
+
   resources :medications
 
   devise_for :users

@@ -1,0 +1,30 @@
+%p#notice= notice
+
+%p
+  %b Name:
+  = @pharmacy.name
+%p
+  %b Phone:
+  = @pharmacy.phone
+%p
+  %b Address1:
+  = @pharmacy.address1
+%p
+  %b Address2:
+  = @pharmacy.address2
+%p
+  %b City:
+  = @pharmacy.city
+%p
+  %b State:
+  = @pharmacy.state
+%p
+  %b Zip:
+  = @pharmacy.zip
+%p
+  %b Website:
+  = @pharmacy.website
+
+= link_to 'Edit', edit_pharmacy_path(@pharmacy)
+\|
+= link_to 'Back', pharmacies_path
