@@ -1,8 +1,8 @@
 class StaticController < ApplicationController
-    
-    layout "static"
-    
+
+    # layout "static"
+
     def index
-        
+
     end
 end
