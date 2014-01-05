@@ -1,0 +1,10 @@
+= form_for @dependent do |f|
+  - if @dependent.errors.any?
+    #error_explanation
+      %h2= "#{pluralize(@dependent.errors.count, "error")} prohibited this dependent from being saved:"
+      %ul
+        - @dependent.errors.full_messages.each do |msg|
+          %li= msg
+
+  .actions
+    = f.submit 'Save'
