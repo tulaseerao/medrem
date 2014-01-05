@@ -11,7 +11,24 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20140102045905) do
+ActiveRecord::Schema.define(version: 20140105030404) do
+
+  create_table "medications", force: true do |t|
+    t.string   "name"
+    t.string   "dosage"
+    t.string   "form"
+    t.string   "amount_i_take"
+    t.string   "days_i_take"
+    t.decimal  "quantity"
+    t.date     "date_prescribed"
+    t.date     "last_refill"
+    t.integer  "days_ahead_reminder"
+    t.string   "pharmacy"
+    t.string   "doctor"
+    t.text     "notes"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
 
   create_table "users", force: true do |t|
     t.string   "email",                  default: "", null: false

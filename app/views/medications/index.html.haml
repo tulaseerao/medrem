@@ -1,0 +1,41 @@
+%h1 Listing medications
+
+%table
+  %tr
+    %th Name
+    %th Dosage
+    %th Form
+    %th Amount i take
+    %th Days i take
+    %th Quantity
+    %th Date prescribed
+    %th Last refill
+    %th Days ahead reminder
+    %th Pharmacy
+    %th Doctor
+    %th Notes
+    %th
+    %th
+    %th
+
+  - @medications.each do |medication|
+    %tr
+      %td= medication.name
+      %td= medication.dosage
+      %td= medication.form
+      %td= medication.amount_i_take
+      %td= medication.days_i_take
+      %td= medication.quantity
+      %td= medication.date_prescribed
+      %td= medication.last_refill
+      %td= medication.days_ahead_reminder
+      %td= medication.pharmacy
+      %td= medication.doctor
+      %td= medication.notes
+      %td= link_to 'Show', medication
+      %td= link_to 'Edit', edit_medication_path(medication)
+      %td= link_to 'Destroy', medication, :method => :delete, :data => { :confirm => 'Are you sure?' }
+
+%br
+
+= link_to 'New Medication', new_medication_path

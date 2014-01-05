@@ -1,0 +1,42 @@
+%p#notice= notice
+
+%p
+  %b Name:
+  = @medication.name
+%p
+  %b Dosage:
+  = @medication.dosage
+%p
+  %b Form:
+  = @medication.form
+%p
+  %b Amount i take:
+  = @medication.amount_i_take
+%p
+  %b Days i take:
+  = @medication.days_i_take
+%p
+  %b Quantity:
+  = @medication.quantity
+%p
+  %b Date prescribed:
+  = @medication.date_prescribed
+%p
+  %b Last refill:
+  = @medication.last_refill
+%p
+  %b Days ahead reminder:
+  = @medication.days_ahead_reminder
+%p
+  %b Pharmacy:
+  = @medication.pharmacy
+%p
+  %b Doctor:
+  = @medication.doctor
+%p
+  %b Notes:
+  = @medication.notes
+
+= link_to 'Edit', edit_medication_path(@medication)
+\|
+= link_to 'Back', medications_path
