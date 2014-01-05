@@ -1,0 +1,46 @@
+= form_for @medication do |f|
+  - if @medication.errors.any?
+    #error_explanation
+      %h2= "#{pluralize(@medication.errors.count, "error")} prohibited this medication from being saved:"
+      %ul
+        - @medication.errors.full_messages.each do |msg|
+          %li= msg
+
+  .field
+    = f.label :name
+    = f.text_field :name
+  .field
+    = f.label :dosage
+    = f.text_field :dosage
+  .field
+    = f.label :form, title: "Pill or Liquid", data: {tooltip: true }
+    = f.text_field :form
+  .field
+    = f.label :amount_i_take
+    = f.text_field :amount_i_take
+  .field
+    = f.label :days_i_take
+    = f.text_field :days_i_take
+  .field
+    = f.label :quantity
+    = f.text_field :quantity
+  .field
+    = f.label :date_prescribed
+    = f.date_select :date_prescribed
+  .field
+    = f.label :last_refill
+    = f.date_select :last_refill
+  .field
+    = f.label :days_ahead_reminder
+    = f.number_field :days_ahead_reminder
+  .field
+    = f.label :pharmacy
+    = f.text_field :pharmacy
+  .field
+    = f.label :doctor
+    = f.text_field :doctor
+  .field
+    = f.label :notes
+    = f.text_area :notes
+  .actions
+    = f.submit 'Save'

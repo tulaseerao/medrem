@@ -11,6 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
+<<<<<<< HEAD
 ActiveRecord::Schema.define(version: 20140104220819) do
 
   create_table "dependents", force: true do |t|
@@ -18,6 +19,49 @@ ActiveRecord::Schema.define(version: 20140104220819) do
     t.string   "last_name"
     t.date     "date_of_birth"
     t.integer  "user_id"
+=======
+ActiveRecord::Schema.define(version: 20140105032436) do
+
+  create_table "doctors", force: true do |t|
+    t.string   "name"
+    t.string   "phone"
+    t.string   "address1"
+    t.string   "address2"
+    t.string   "city"
+    t.string   "state"
+    t.string   "zip"
+    t.string   "specialty"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
+  create_table "medications", force: true do |t|
+    t.string   "name"
+    t.string   "dosage"
+    t.string   "form"
+    t.string   "amount_i_take"
+    t.string   "days_i_take"
+    t.decimal  "quantity"
+    t.date     "date_prescribed"
+    t.date     "last_refill"
+    t.integer  "days_ahead_reminder"
+    t.string   "pharmacy"
+    t.string   "doctor"
+    t.text     "notes"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
+  create_table "pharmacies", force: true do |t|
+    t.string   "name"
+    t.string   "phone"
+    t.string   "address1"
+    t.string   "address2"
+    t.string   "city"
+    t.string   "state"
+    t.string   "zip"
+    t.string   "website"
+>>>>>>> 16f7969fa1db838a3bf4ffe77e8ed57f3214074e
     t.datetime "created_at"
     t.datetime "updated_at"
   end
