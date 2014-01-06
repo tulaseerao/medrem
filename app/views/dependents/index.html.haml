@@ -1,0 +1,17 @@
+%h1 Listing dependents
+
+%table
+  %tr
+    %th
+    %th
+    %th
+
+  - @dependents.each do |dependent|
+    %tr
+      %td= link_to 'Show', dependent
+      %td= link_to 'Edit', edit_dependent_path(dependent)
+      %td= link_to 'Destroy', dependent, :method => :delete, :data => { :confirm => 'Are you sure?' }
+
+%br
+
+= link_to 'New Dependent', new_dependent_path

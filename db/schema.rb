@@ -13,6 +13,15 @@
 
 ActiveRecord::Schema.define(version: 20140105032436) do
 
+  create_table "dependents", force: true do |t|
+    t.string   "first_name"
+    t.string   "last_name"
+    t.date     "date_of_birth"
+    t.integer  "user_id"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
   create_table "doctors", force: true do |t|
     t.string   "name"
     t.string   "phone"
