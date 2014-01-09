@@ -1,0 +1,18 @@
+%p#notice= notice
+
+%p
+  %b First name:
+  = @dependent.first_name
+%p
+  %b Last name:
+  = @dependent.last_name
+%p
+  %b Date of birth:
+  = @dependent.date_of_birth
+%p
+  %b User:
+  = @dependent.user_id
+
+= link_to 'Edit', edit_dependent_path(@dependent), 'data-no-turbolink' => true
+\|
+= link_to 'Back', dependents_path, 'data-no-turbolink' => true

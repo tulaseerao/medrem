@@ -1,0 +1,27 @@
+%h1 My Dependents
+
+%table
+  %thead
+    %tr
+      %th First name
+      %th Last name
+      %th Date of birth
+      %th User
+      %th
+      %th
+      %th
+
+  %tbody
+    - @dependents.each do |dependent|
+      %tr
+        %td= dependent.first_name
+        %td= dependent.last_name
+        %td= dependent.date_of_birth
+        %td= dependent.user_id
+        %td= link_to 'Show', dependent, 'data-no-turbolink' => true
+        %td= link_to 'Edit', edit_dependent_path(dependent), 'data-no-turbolink' => true
+        %td= link_to 'Destroy', dependent, :method => :delete, :data => { :confirm => 'Are you sure?' },'data-no-turbolink' => true
+
+%br
+
+= link_to 'New Dependent', new_dependent_path, 'data-no-turbolink' => true

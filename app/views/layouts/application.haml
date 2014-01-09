@@ -33,7 +33,8 @@
             - else
               %li= link_to "Login", new_user_session_path
         %section.main-section
-          = yield
+          .row
+            = yield
           / content goes here
 
     %a.exit-off-canvas

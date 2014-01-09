@@ -1,0 +1,51 @@
+= form_for @medication do |f|
+  - if @medication.errors.any?
+    #error_explanation
+      %h2= "#{pluralize(@medication.errors.count, "error")} prohibited this medication from being saved:"
+      %ul
+        - @medication.errors.full_messages.each do |msg|
+          %li= msg
+
+  .row
+    .large-3.columns
+      = f.label :name
+      = f.text_field :name
+    .large-3.column
+      = f.label :dosage
+      = f.text_field :dosage
+    .large-3.column
+      = f.label :form, title: "Pill or Liquid", data: {tooltip: true }
+      = f.text_field :form
+    .large-3.column
+      = f.label :amount_i_take
+      = f.text_field :amount_i_take
+    .large-3.column
+      = f.label :days_i_take
+      = f.text_field :days_i_take
+    .large-3.column
+      = f.label :quantity
+      = f.text_field :quantity
+    .large-3.column
+      = f.label :date_prescribed
+      = f.text_field :date_prescribed, class: 'datepicker'
+      / = f.date_select :date_prescribed
+    .large-3.column
+      = f.label :last_refill
+      = f.text_field :last_refill, class: 'datepicker'
+      /= f.date_select :last_refill
+    .large-3.column
+      = f.label :days_ahead_reminder
+      = f.number_field :days_ahead_reminder
+    .large-3.column
+      = f.label :pharmacy
+      = f.text_field :pharmacy
+    .large-6.column
+      = f.label :doctor
+      = f.text_field :doctor
+  .row
+    .large-12.column
+      = f.label :notes
+      = f.text_area :notes
+  .row
+    .large-2.columns
+      = f.submit 'Save', class: 'button tiny'
