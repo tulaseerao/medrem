@@ -1,0 +1,34 @@
+%h1 Listing pharmacies
+
+%table
+  %thead
+    %tr
+      %th Name
+      %th Phone
+      %th Address1
+      %th Address2
+      %th City
+      %th State
+      %th Zip
+      %th Website
+      %th
+      %th
+      %th
+  %tbody
+    - @pharmacies.each do |pharmacy|
+      %tr
+        %td= pharmacy.name
+        %td= pharmacy.phone
+        %td= pharmacy.address1
+        %td= pharmacy.address2
+        %td= pharmacy.city
+        %td= pharmacy.state
+        %td= pharmacy.zip
+        %td= pharmacy.website
+        %td= link_to 'Show', pharmacy
+        %td= link_to 'Edit', edit_pharmacy_path(pharmacy)
+        %td= link_to 'Destroy', pharmacy, :method => :delete, :data => { :confirm => 'Are you sure?' }
+
+%br
+
+= link_to 'New Pharmacy', new_pharmacy_path

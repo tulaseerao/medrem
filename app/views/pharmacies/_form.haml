@@ -6,29 +6,30 @@
         - @pharmacy.errors.full_messages.each do |msg|
           %li= msg
 
-  .field
+  .large-3.column
     = f.label :name
     = f.text_field :name
-  .field
+  .large-3.column
     = f.label :phone
     = f.text_field :phone
-  .field
+  .large-3.column
     = f.label :address1
     = f.text_field :address1
-  .field
+  .large-3.column
     = f.label :address2
     = f.text_field :address2
-  .field
+  .large-3.column
     = f.label :city
     = f.text_field :city
-  .field
+  .large-3.column
     = f.label :state
     = f.text_field :state
-  .field
+  .large-3.column
     = f.label :zip
     = f.text_field :zip
-  .field
+  .large-3.column
     = f.label :website
     = f.text_field :website
-  .actions
-    = f.submit 'Save'
+  .row
+    .large-2.columns
+      = f.submit 'Save', class: 'button tiny'
