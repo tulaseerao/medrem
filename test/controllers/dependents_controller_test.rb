@@ -18,7 +18,7 @@ class DependentsControllerTest < ActionController::TestCase
 
   test "should create dependent" do
     assert_difference('Dependent.count') do
-      post :create, dependent: {  }
+      post :create, dependent: { date_of_birth: @dependent.date_of_birth, first_name: @dependent.first_name, last_name: @dependent.last_name, user_id: @dependent.user_id }
     end
 
     assert_redirected_to dependent_path(assigns(:dependent))
@@ -35,7 +35,7 @@ class DependentsControllerTest < ActionController::TestCase
   end
 
   test "should update dependent" do
-    patch :update, id: @dependent, dependent: {  }
+    patch :update, id: @dependent, dependent: { date_of_birth: @dependent.date_of_birth, first_name: @dependent.first_name, last_name: @dependent.last_name, user_id: @dependent.user_id }
     assert_redirected_to dependent_path(assigns(:dependent))
   end
 

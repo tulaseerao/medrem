@@ -3,11 +3,11 @@
 one:
   first_name: MyString
   last_name: MyString
-  date_of_birth: 2014-01-04
+  date_of_birth: 2014-01-08
   user_id: 1
 
 two:
   first_name: MyString
   last_name: MyString
-  date_of_birth: 2014-01-04
+  date_of_birth: 2014-01-08
   user_id: 1

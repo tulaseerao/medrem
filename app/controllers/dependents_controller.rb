@@ -69,6 +69,6 @@ class DependentsController < ApplicationController
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def dependent_params
-      params[:dependent]
+      params.require(:dependent).permit(:first_name, :last_name, :date_of_birth, :user_id)
     end
 end

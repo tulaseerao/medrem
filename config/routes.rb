@@ -1,4 +1,6 @@
 Medrem::Application.routes.draw do
+  resources :dependents
+
   resources :doctors
 
   resources :pharmacies
