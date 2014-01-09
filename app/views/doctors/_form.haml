@@ -1,4 +1,4 @@
-= form_for @doctor do |f|
+= form_for(@doctor, :html=> {"data-abide"=>"" }) do |f|
   - if @doctor.errors.any?
     #error_explanation
       %h2= "#{pluralize(@doctor.errors.count, "error")} prohibited this doctor from being saved:"
@@ -6,27 +6,33 @@
         - @doctor.errors.full_messages.each do |msg|
           %li= msg
 
-  .large-3.column
-    = f.label :name
-    = f.text_field :name
+  .name-field
+    .large-3.column
+      = f.label :name
+      = f.text_field :name, pattern: "[a-zA-Z]+", required: ''
+      %small.error Name is required and must be a string.
   .large-3.column
     = f.label :phone
     = f.text_field :phone
   .large-3.column
     = f.label :address1
-    = f.text_field :address1
+    = f.text_field :address1, required: ''
+    %small.error Address1 is required and must be valid US street address.
   .large-3.column
     = f.label :address2
     = f.text_field :address2
   .large-3.column
     = f.label :city
-    = f.text_field :city
+    = f.text_field :city, required: ''
+    %small.error City is required and must be valid US City.
   .large-3.column
     = f.label :state
-    = f.text_field :state
+    = f.text_field :state, required: ''
+    %small.error State is required and must be valid US State.
   .large-3.column
     = f.label :zip
-    = f.text_field :zip
+    = f.text_field :zip, required: '', pattern: "[0-9]{3,5}"
+    %small.error Zip is required and must be valid zip code.
   .large-3.column
     = f.label :specialty
     = f.text_field :specialty

@@ -1,4 +1,4 @@
-= form_for @medication do |f|
+= form_for(@medication, :html=> {"data-abide"=>"" }) do |f|
   - if @medication.errors.any?
     #error_explanation
       %h2= "#{pluralize(@medication.errors.count, "error")} prohibited this medication from being saved:"
@@ -9,10 +9,12 @@
   .row
     .large-3.columns
       = f.label :name
-      = f.text_field :name
+      = f.text_field :name,pattern: "[a-zA-Z]+", required: ''
+      %small.error Name is required and must be a string.
     .large-3.column
       = f.label :dosage
-      = f.text_field :dosage
+      = f.text_field :dosage, required: ''
+      %small.error Dosage is required.
     .large-3.column
       = f.label :form, title: "Pill or Liquid", data: {tooltip: true }
       = f.text_field :form
@@ -24,7 +26,8 @@
       = f.text_field :days_i_take
     .large-3.column
       = f.label :quantity
-      = f.text_field :quantity
+      = f.text_field :quantity, required: ''
+      %small.error Dosage is required.
     .large-3.column
       = f.label :date_prescribed
       = f.text_field :date_prescribed, class: 'datepicker'

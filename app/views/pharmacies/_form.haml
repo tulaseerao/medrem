@@ -1,4 +1,4 @@
-= form_for @pharmacy do |f|
+= form_for(@pharmacy, :html=> {"data-abide"=>"" }) do |f|
   - if @pharmacy.errors.any?
     #error_explanation
       %h2= "#{pluralize(@pharmacy.errors.count, "error")} prohibited this pharmacy from being saved:"
@@ -8,22 +8,26 @@
 
   .large-3.column
     = f.label :name
-    = f.text_field :name
+    = f.text_field :name, pattern: "[a-zA-Z]+", required: ''
+    %small.error Name is required and must be a string.
   .large-3.column
     = f.label :phone
     = f.text_field :phone
   .large-3.column
     = f.label :address1
-    = f.text_field :address1
+    = f.text_field :address1, required: ''
+    %small.error Address1 is required and must be valid US street address.
   .large-3.column
     = f.label :address2
     = f.text_field :address2
   .large-3.column
     = f.label :city
-    = f.text_field :city
+    = f.text_field :city, required: ''
+    %small.error City is required and must be valid US City.
   .large-3.column
     = f.label :state
-    = f.text_field :state
+    = f.text_field :state, required: ''
+    %small.error State is required and must be valid US State.
   .large-3.column
     = f.label :zip
     = f.text_field :zip
