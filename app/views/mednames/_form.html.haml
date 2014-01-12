@@ -1,0 +1,22 @@
+= form_for @medname do |f|
+  - if @medname.errors.any?
+    #error_explanation
+      %h2= "#{pluralize(@medname.errors.count, "error")} prohibited this medname from being saved:"
+      %ul
+        - @medname.errors.full_messages.each do |msg|
+          %li= msg
+
+  .field
+    = f.label :name
+    = f.text_field :name
+  .field
+    = f.label :strength
+    = f.text_field :strength
+  .field
+    = f.label :form
+    = f.text_field :form
+  .field
+    = f.label :purpose
+    = f.text_field :purpose
+  .actions
+    = f.submit 'Save'

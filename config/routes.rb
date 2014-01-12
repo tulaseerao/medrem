@@ -1,11 +1,15 @@
 Medrem::Application.routes.draw do
+  resources :mednames
+
   resources :dependents
 
   resources :doctors
 
   resources :pharmacies
 
-  resources :medications
+  resources :medications do
+    get :autocomplete_medname_name, :on => :collection
+  end
 
   devise_for :users
   # The priority is based upon order of creation: first created -> highest priority.

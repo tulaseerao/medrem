@@ -1,6 +1,6 @@
 class MedicationsController < ApplicationController
   before_action :set_medication, only: [:show, :edit, :update, :destroy]
-
+  autocomplete :medname, :name, extra_data: [:strength],display_value: :funky_method
   # GET /medications
   # GET /medications.json
   def index

@@ -1,0 +1,18 @@
+%p#notice= notice
+
+%p
+  %b Name:
+  = @medname.name
+%p
+  %b Strength:
+  = @medname.strength
+%p
+  %b Form:
+  = @medname.form
+%p
+  %b Purpose:
+  = @medname.purpose
+
+= link_to 'Edit', edit_medname_path(@medname)
+\|
+= link_to 'Back', mednames_path

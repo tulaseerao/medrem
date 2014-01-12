@@ -1,0 +1,25 @@
+%h1 Listing mednames
+
+%table
+  %tr
+    %th Name
+    %th Strength
+    %th Form
+    %th Purpose
+    %th
+    %th
+    %th
+
+  - @mednames.each do |medname|
+    %tr
+      %td= medname.name
+      %td= medname.strength
+      %td= medname.form
+      %td= medname.purpose
+      %td= link_to 'Show', medname
+      %td= link_to 'Edit', edit_medname_path(medname)
+      %td= link_to 'Destroy', medname, :method => :delete, :data => { :confirm => 'Are you sure?' }
+
+%br
+
+= link_to 'New Medname', new_medname_path

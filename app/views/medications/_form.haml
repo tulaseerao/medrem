@@ -9,8 +9,9 @@
   .row
     .large-3.columns
       = f.label :name
-      = f.text_field :name,pattern: "[a-zA-Z]+", required: ''
-      %small.error Name is required and must be a string.
+      / = f.text_field :name,pattern: "[a-zA-Z]+", required: ''
+      = f.autocomplete_field :name, autocomplete_medname_name_medications_path,pattern: "[a-zA-Z]+", required: ''
+      / %small.error Name is required and must be a string.
     .large-3.column
       = f.label :dosage
       = f.text_field :dosage, required: ''

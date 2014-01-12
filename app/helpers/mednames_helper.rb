@@ -1,0 +1,2 @@
+module MednamesHelper
+end
