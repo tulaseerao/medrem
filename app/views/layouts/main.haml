@@ -15,18 +15,16 @@
     - if current_user
       %ul.right.button-group
         %li
-          %li= link_to "Dependents", dependents_path, class: :button
+          %li= link_to "Dependents", dependents_path, :class => 'button tiny'
         %li
-          %li= link_to "Doctors", doctors_path, class: :button
+          %li= link_to "Doctors", doctors_path, :class => 'button tiny'
         %li
-          %li= link_to "Pharmacies", pharmacies_path, class: :button
-        %li
-          %a.button{:href => "#"} History
-        %li= link_to "Logout", destroy_user_session_path, method: :delete, class: :button
+          %li= link_to "Pharmacies", pharmacies_path, :class => 'button tiny'
+        %li= link_to "Logout", destroy_user_session_path, method: :delete, :class => 'button tiny'
     - else
       %ul.right.button-group
         - if current_user
-          %li= link_to "Logout", destroy_user_session_path, method: :delete, class: :button
+          %li= link_to "Logout", destroy_user_session_path, method: :delete, :class => 'button tiny'
 / End Header and Nav
 / First Band (Slider)
 .row
