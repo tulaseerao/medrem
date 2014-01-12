@@ -1,4 +1,5 @@
 class PharmaciesController < ApplicationController
+  layout "main"
   before_action :set_pharmacy, only: [:show, :edit, :update, :destroy]
 
   # GET /pharmacies

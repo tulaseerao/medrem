@@ -1,4 +1,5 @@
 class MedicationsController < ApplicationController
+  layout "main"
   before_action :set_medication, only: [:show, :edit, :update, :destroy]
 
   # GET /medications

@@ -1,4 +1,5 @@
 class DoctorsController < ApplicationController
+  layout "main"
   before_action :set_doctor, only: [:show, :edit, :update, :destroy]
 
   # GET /doctors

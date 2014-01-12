@@ -1,4 +1,5 @@
 class DependentsController < ApplicationController
+  layout "main"
   before_action :set_dependent, only: [:show, :edit, :update, :destroy]
 
   # GET /dependents
