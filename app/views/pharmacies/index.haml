@@ -13,7 +13,6 @@
       %th Website
       %th
       %th
-      %th
   %tbody
     - @pharmacies.each do |pharmacy|
       %tr
@@ -25,10 +24,9 @@
         %td= pharmacy.state
         %td= pharmacy.zip
         %td= pharmacy.website
-        %td= link_to 'Show', pharmacy
         %td= link_to 'Edit', edit_pharmacy_path(pharmacy)
         %td= link_to 'Destroy', pharmacy, :method => :delete, :data => { :confirm => 'Are you sure?' }
 
 %br
 
-= link_to 'New Pharmacy', new_pharmacy_path
+= link_to 'New Pharmacy', new_pharmacy_path, class: 'button'

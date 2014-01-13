@@ -16,20 +16,18 @@
     - if current_user
       %ul.right.button-group
         %li
-          %li= link_to "Dependents", dependents_path, class: :button
+          %li= link_to "Dependents", dependents_path, :class => 'button tiny'
         %li
-          %li= link_to "Doctors", doctors_path, class: :button
+          %li= link_to "Doctors", doctors_path, :class => 'button tiny'
         %li
-          %li= link_to "Pharmacies", pharmacies_path, class: :button
-        %li
-          %a.button{:href => "#"} History
-        %li= link_to "Logout", destroy_user_session_path, method: :delete, class: :button
+          %li= link_to "Pharmacies", pharmacies_path, :class => 'button tiny'
+        %li= link_to "Logout", destroy_user_session_path, method: :delete, :class => 'button tiny'
     - else
       %ul.right.button-group
         - if current_user
-          %li= link_to "Logout", destroy_user_session_path, method: :delete, class: :button
+          %li= link_to "Logout", destroy_user_session_path, method: :delete, :class => 'button tiny'
         - else
-          %li= link_to "Login", new_user_session_path, class: :button
+          %li= link_to "Login", new_user_session_path, :class => 'button tiny'
 / End Header and Nav
 / First Band (Slider)
 .row
@@ -60,7 +58,7 @@
             .large-9.columns
               %p It's free, so what are you waiting for?
             .large-3.columns
-              %a.radius.button.right{:href => "#"} Register
+              =link_to "Register", new_user_registration_path, class: 'radius button right'
 / Footer
 %footer.row
   .large-12.columns
