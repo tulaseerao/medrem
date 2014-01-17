@@ -6,17 +6,18 @@
         - @medname.errors.full_messages.each do |msg|
           %li= msg
 
-  .field
+  .large-3.column
     = f.label :name
     = f.text_field :name
-  .field
+  .large-3.column
     = f.label :strength
     = f.text_field :strength
-  .field
+  .large-3.column
     = f.label :form
     = f.text_field :form
-  .field
+  .large-3.column
     = f.label :purpose
     = f.text_field :purpose
-  .actions
-    = f.submit 'Save'
+  .row
+    .large-2.columns
+      = f.submit 'Save', class: 'button tiny'

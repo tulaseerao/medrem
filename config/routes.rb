@@ -1,5 +1,7 @@
 Medrem::Application.routes.draw do
-  resources :mednames
+  resources :mednames do
+    collection { post :import }
+  end
 
   resources :dependents
 

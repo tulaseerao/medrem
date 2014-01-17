@@ -1,15 +1,22 @@
 class MednamesController < ApplicationController
+  layout "main"
   before_action :set_medname, only: [:show, :edit, :update, :destroy]
 
   # GET /mednames
   # GET /mednames.json
   def index
-    @mednames = Medname.all
+    # @mednames = Medname.all
+    @mednames = Medname.paginate(page: params[:page], per_page: 10)
   end
 
   # GET /mednames/1
   # GET /mednames/1.json
   def show
+  end
+
+  def import
+    Medname.import(params[:file])
+    redirect_to mednames_path, notice: 'Medications were successfully imported.'
   end
 
   # GET /mednames/new

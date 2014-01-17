@@ -12,7 +12,7 @@
 
   - @mednames.each do |medname|
     %tr
-      %td= medname.name
+      %td= (medname.name.html_safe)
       %td= medname.strength
       %td= medname.form
       %td= medname.purpose
@@ -20,6 +20,10 @@
       %td= link_to 'Edit', edit_medname_path(medname)
       %td= link_to 'Destroy', medname, :method => :delete, :data => { :confirm => 'Are you sure?' }
 
+.pagination{align: 'right'}
+  = will_paginate @mednames
+
 %br
 
 = link_to 'New Medname', new_medname_path
+= render '/shared/import', file_name: "Mednames.xlsx", import_path: import_mednames_path

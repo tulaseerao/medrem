@@ -41,7 +41,7 @@ ActiveRecord::Schema.define(version: 20140110022443) do
     t.string   "form"
     t.string   "amount_i_take"
     t.string   "days_i_take"
-    t.decimal  "quantity"
+    t.decimal  "quantity",            precision: 10, scale: 0
     t.date     "date_prescribed"
     t.date     "last_refill"
     t.integer  "days_ahead_reminder"
@@ -89,7 +89,7 @@ ActiveRecord::Schema.define(version: 20140110022443) do
     t.datetime "updated_at"
   end
 
-  add_index "users", ["email"], name: "index_users_on_email", unique: true
-  add_index "users", ["reset_password_token"], name: "index_users_on_reset_password_token", unique: true
+  add_index "users", ["email"], name: "index_users_on_email", unique: true, using: :btree
+  add_index "users", ["reset_password_token"], name: "index_users_on_reset_password_token", unique: true, using: :btree
 
 end
